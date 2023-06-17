@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>print first ten numbers</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+        }
+        
+        .number-list {
+          list-style: none;
+          padding: 0;
+        }
+        
+        .number-list li {
+          margin-bottom: 5px;
+        }
+      </style>
+    
+</head>
+<body>
+    <body>
+        <ul class="number-list" id="numberList"></ul>
+        
+        <script>
+          var numberList = document.getElementById("numberList");
+          
+          for (var i = 1; i <= 10; i++) {
+            var listItem = document.createElement("li");
+            listItem.textContent = i;
+            numberList.appendChild(listItem);
+          }
+        </script>
+      
+</body>
+</html>

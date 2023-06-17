@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finding the largest number in an array</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+        }
+        
+        .input-container {
+          margin-bottom: 10px;
+        }
+        
+        .result {
+          font-weight: bold;
+        }
+      </style>
+    
+</head>
+<body>
+    <body>
+        <div class="input-container">
+          <label for="numbers">Enter numbers (comma-separated):</label>
+          <input type="text" id="numbers" />
+        </div>
+        
+        <button onclick="findLargest()">Find Largest Number</button>
+        
+        <p class="result" id="result"></p>
+        
+        <script>
+          function findLargest() {
+            var numbersInput = document.getElementById("numbers").value;
+            var numbersArray = numbersInput.split(",").map(Number);
+            
+            var largestNumber = numbersArray[0];
+            
+            for (var i = 1; i < numbersArray.length; i++) {
+              if (numbersArray[i] > largestNumber) {
+                largestNumber = numbersArray[i];
+              }
+            }
+            
+            document.getElementById("result").textContent = "The largest number is: " + largestNumber;
+          }
+        </script>
+      
+    
+</body>
+</html>

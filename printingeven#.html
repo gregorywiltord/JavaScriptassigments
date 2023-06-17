@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>printing even numbers in an array</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      
+      .number-list {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .number-list li {
+        margin-bottom: 5px;
+      }
+    </style>
+  
+</head>
+<body>
+    <ul class="number-list" id="numberList"></ul>
+  
+    <script>
+      var numberList = document.getElementById("numberList");
+      var numbers = [2, 5, 8, 10, 13, 16, 20, 25, 30, 35];
+      
+      for (var i = 0; i < numbers.length; i++) {
+        if (numbers[i] % 2 === 0) {
+          var listItem = document.createElement("li");
+          listItem.textContent = numbers[i];
+          numberList.appendChild(listItem);
+        }
+      }
+    </script>
+  
+</body>
+</html>

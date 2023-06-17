@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finding the fibonacci series</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+        }
+        
+        .input-container {
+          margin-bottom: 10px;
+        }
+        
+        .result {
+          font-weight: bold;
+        }
+      </style>
+    
+</head>
+<body>
+    <div class="input-container">
+        <label for="number">Enter a number:</label>
+        <input type="number" id="number" />
+      </div>
+      
+      <button onclick="calculateFibonacci()">Calculate Fibonacci</button>
+      
+      <p class="result" id="result"></p>
+      
+      <script>
+        function calculateFibonacci() {
+          var number = parseInt(document.getElementById("number").value);
+          
+          var fibValue = fibonacci(number);
+          
+          document.getElementById("result").textContent = "The Fibonacci value is: " + fibValue;
+        }
+        
+        function fibonacci(n) {
+          if (n <= 1) {
+            return n;
+          }
+          
+          var fibPrev = 0;
+          var fibCurrent = 1;
+          var fibValue = 0;
+          
+          for (var i = 2; i <= n; i++) {
+            fibValue = fibPrev + fibCurrent;
+            fibPrev = fibCurrent;
+            fibCurrent = fibValue;
+          }
+          
+          return fibValue;
+        }
+      </script>
+    
+</body>
+</html>

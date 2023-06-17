@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finding the first ten numbers and finding the largest number in an array. </title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+        }
+        
+        .number-list {
+          list-style: none;
+          padding: 0;
+        }
+        
+        .number-list li {
+          margin-bottom: 5px;
+        }
+        
+        .input-container {
+          margin-bottom: 10px;
+        }
+        
+        .result {
+          font-weight: bold;
+        }
+      </style>
+    
+</head>
+<body>
+    <h2>First Ten Numbers using while loop:</h2>
+    <ul class="number-list" id="numberList"></ul>
+    
+    <h2>Find Largest Number in Array using while loop:</h2>
+    <div class="input-container">
+      <label for="numbers">Enter numbers (comma-separated):</label>
+      <input type="text" id="numbers" />
+    </div>
+    
+    <button onclick="findLargest()">Find Largest Number</button>
+    
+    <p class="result" id="result"></p>
+    
+    <script>
+      // First Ten Numbers using while loop
+      var numberList = document.getElementById("numberList");
+      var i = 1;
+      
+      while (i <= 10) {
+        var listItem = document.createElement("li");
+        listItem.textContent = i;
+        numberList.appendChild(listItem);
+        i++;
+      }
+      
+      // Find Largest Number in Array using while loop
+      function findLargest() {
+        var numbersInput = document.getElementById("numbers").value;
+        var numbersArray = numbersInput.split(",").map(Number);
+        
+        var largestNumber = numbersArray[0];
+        var index = 1;
+        
+        while (index < numbersArray.length) {
+          if (numbersArray[index] > largestNumber) {
+            largestNumber = numbersArray[index];
+          }
+          index++;
+        }
+        
+        document.getElementById("result").textContent = "The largest number is: " + largestNumber;
+      }
+    </script>
+  
+</body>
+</html>
